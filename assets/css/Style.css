@@ -1,0 +1,47 @@
+.bg {
+    background-image: url(/images/mainbgimg.jpg);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "MarkPro", sans-serif;
+}
+#main {
+    min-height: 30vh;
+    min-width: 30vw;
+    background-color: white;
+    box-shadow: 0px 0px 28px 2px rgba(92,92,92,0.77);
+    text-align: center;
+    padding: 10px;
+}
+.avatar {
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.icons {
+    list-style-type: none;
+    padding: 0;
+}
+ul {
+    display: flex;
+    justify-content: center;
+
+}
+ul > li {
+    padding-left: .7em;
+    padding-right: .7em;
+}
+ul > li > a {
+    color: inherit;
+} 
+a:hover {
+    color:#559655;
+}
