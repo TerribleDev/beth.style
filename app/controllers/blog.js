@@ -7,16 +7,23 @@ const md = new MarkdownIt();
 const path = require('path');
 const util = require('util');
 const readFile = util.promisify(fs.readFile);
+const readdir = util.promisify(fs.readdir);
 
 module.exports = (app) => {
     app.use('/food', router);
 };
 
 router.get('/', (req, res, next) => {
-    const articles = [new Article(), new Article()];
-    res.render('index', {
-        title: 'I"m food',
-        articles: articles
+    readdir(path.resolve(__dirname, '../posts/'))
+    .then(files => {
+        let newItems = [];
+        files.forEach(item => {
+           newItems.push(item.replace('.md', ''));
+        });
+        res.render('bloglist', {
+            items: newItems,
+            title: ' '
+        });
     });
 });
 
