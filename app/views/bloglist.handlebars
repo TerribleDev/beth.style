@@ -1,9 +1,20 @@
-<ul class="blog-card">
+{{!-- <ul>
     {{#each items}}
     <li><a href= "/food/{{this}}">{{this}}</a></li>
     {{/each}}
-</ul>
-
+</ul> --}}
+<div class="placement">
+{{#each items}}
+<div class="foodCard">
+    <a href="{{this.url}}">
+<img class="foodPic" src="{{this.imgUrl}}" alt="food"/>
+</a>
+<div class="foodName">
+<p><a href= "{{this.url}}">{{this.title}}</a></p>
+</div>
+</div>
+{{/each}}
+</div>
 {{#section 'css'}}
     <link rel="stylesheet" href="/css/blogList.css" />
 {{/section}}
